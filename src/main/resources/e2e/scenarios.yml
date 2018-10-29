@@ -1,0 +1,21 @@
+Scenario(Main):
+  description: Home page post test
+  interactions:
+    - description: display home page
+      request:
+        method: GET
+        url: /
+      response:
+        html:
+          h1: CAPTCHA DEMO
+          head title: CAPTCHA Demo
+          form div: "Name:"
+    - description: post to home page
+      request:
+        method: POST
+        url: /
+        params:
+          name: actframework
+      response:
+        html:
+          body div: "Result: actframework"
